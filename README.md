@@ -1,5 +1,5 @@
 # Delicacy-Designer
-Delicacy Designer is a App for all people who love delicious foods. But it is not just a App to teach us how to cook, It can do more things.
+Delicacy Designer is an App for all people who love delicious foods. But it is not just a App to teach us how to cook, It can do more things.
 -we can find more delicious and know how to cook it in the app;
 -we can upload some pictures about our dish and discuss with other people;
 -we can know more friend similar to our taste;
