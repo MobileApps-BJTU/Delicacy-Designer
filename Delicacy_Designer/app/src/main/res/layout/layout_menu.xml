@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dip"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="240dp"
+        android:layout_height="50.0dp"
+        android:background="#ffff7a37"
+        android:gravity="center"
+        android:text="@string/userName"
+        android:textColor="#000000"
+        android:textSize="14.0sp" />
+
+    <TextView
+        android:id="@+id/createRecipe"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/createRecipe"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
+
+    <TextView
+        android:id="@+id/collection"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/recipeCollection"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
+
+    <TextView
+        android:id="@+id/myOrder"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/my_order"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
+
+    <TextView
+        android:id="@+id/myGroup"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/my_group"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/following_designer"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
+</LinearLayout>
