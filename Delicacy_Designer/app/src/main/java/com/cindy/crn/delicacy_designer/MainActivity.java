@@ -1,6 +1,8 @@
 package com.cindy.crn.delicacy_designer;
 
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,11 +25,11 @@ public class MainActivity extends FragmentActivity implements
     private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
     private SlideMenu slideMenu;
-    private TextView userName, createRecipe,recipeCollection,myGroup,myOrder,following;
+    private TextView userName, createRecipe,recipeCollection,myGroup,myOrder,followin,myshare;
     private ImageView slideSwicher;
     private List<ImageView> mTabIndicator=new ArrayList<ImageView>();
     private List<Fragment> mTabs=new ArrayList<Fragment>();
-
+    private ImageView qrbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,26 @@ public class MainActivity extends FragmentActivity implements
         });
 
         //TODO:给侧边栏每一栏加点击事件跳转到对应界面
+        myshare = (TextView)findViewById(R.id.myshare);
+        myshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,ShareActivity.class);
+                startActivity(i);
+            }
+        });
+
+        qrbutton = (ImageView)findViewById(R.id.qr_button);
+        qrbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MipcaActivityCapture.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                //startActivityForResult(intent, SCANNIN_GREQUEST_CODE);
+                startActivity(intent);
+            }
+        });
     }
 
 

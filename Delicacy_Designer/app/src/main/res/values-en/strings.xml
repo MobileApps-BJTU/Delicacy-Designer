@@ -1,0 +1,15 @@
+<resources>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="back">back</string>
+    <string name="sweet">sweet</string>
+    <string name="username">steveyg</string>
+    <string name="materials">Materials</string>
+    <string name="sendworkd">uplode mine works</string>
+    <string name="comment">scommenthare</string>
+    <string name="like">like</string>
+    <string name="myshare">My share</string>
+<string name="scan">scan</string>
+</resources>
+

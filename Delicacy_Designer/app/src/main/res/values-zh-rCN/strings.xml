@@ -1,0 +1,16 @@
+<resources>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="back">back</string>
+    <string name="sweet">菠萝芝士小甜点</string>
+    <string name="username">steveyg</string>
+    <string name="materials">用料</string>
+    <string name="steps">做法</string>
+    <string name="sendworkd">上传我的作品</string>
+    <string name="comment">评论</string>
+    <string name="like">赞</string>
+    <string name="myshare">我的分享</string>
+    <string name="scan">扫一扫</string>
+</resources>
+

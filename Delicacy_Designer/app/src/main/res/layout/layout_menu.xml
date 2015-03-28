@@ -8,12 +8,12 @@
     <TextView
         android:id="@+id/userName"
         android:layout_width="240dp"
-        android:layout_height="50.0dp"
+        android:layout_height="45.0dp"
         android:background="#ffff7a37"
         android:gravity="center"
         android:text="@string/userName"
-        android:textColor="#000000"
-        android:textSize="14.0sp" />
+        android:textColor="#ffffff"
+        android:textSize="17.5dp" />
 
     <TextView
         android:id="@+id/createRecipe"
@@ -79,6 +79,20 @@
         android:layout_height="2.0dip"
         android:background="@drawable/ic_shelf_category_divider" />
 
+    <TextView
+        android:id="@+id/myshare"
+        android:layout_width="240dip"
+        android:layout_height="50.0dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:paddingLeft="15.0dp"
+        android:text="@string/myshare"
+        android:textColor="#ff959595"
+        android:textSize="16.0sp" />
+    <View
+        android:layout_width="240dip"
+        android:layout_height="2.0dip"
+        android:background="@drawable/ic_shelf_category_divider" />
     <TextView
         android:id="@+id/following"
         android:layout_width="240dip"

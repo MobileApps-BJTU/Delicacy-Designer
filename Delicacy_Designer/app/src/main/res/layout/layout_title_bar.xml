@@ -27,12 +27,13 @@
         android:textColor="#DDFFFFFF"
         android:textSize="22sp" />
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:id="@+id/qr_button"
+        android:layout_width="match_parent"
+        android:background="@null"
+        android:layout_height="32dp"
         android:layout_toRightOf="@+id/title_bar_name"
-        android:layout_marginLeft="60dp"
         android:layout_centerVertical="true"
-        android:src="@drawable/bulb"
+        android:src="@drawable/qr_logo"
 
         />
 
