@@ -1,13 +1,16 @@
 package com.cindy.crn.delicacy_designer;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 
 /**
@@ -39,6 +42,11 @@ public class ForumFragment extends Fragment {
      * @return A new instance of fragment ForumFragment.
      */
     // TODO: Rename and change types and number of parameters
+
+
+
+
+    private MyListView listRecordList;
     public static ForumFragment newInstance(String param1, String param2) {
         ForumFragment fragment = new ForumFragment();
         Bundle args = new Bundle();
@@ -59,13 +67,27 @@ public class ForumFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+        //ForumListAdapter adapter = new ForumListAdapter(parentActivity);
+        //listRecordList.setAdapter(adapter);//为ListView绑定Adapter
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        listRecordList = (MyListView)getView().findViewById(R.id.recipe_list);
+        ForumListAdapter adapter = new ForumListAdapter(this.getView().getContext());
+        listRecordList.setAdapter(adapter);//为ListView绑定Adapter
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forum, container, false);
+        return inflater.inflate(R.layout.fragment_forum, container, false);//设置layout
     }
 
     // TODO: Rename method, update argument and hook method into UI event

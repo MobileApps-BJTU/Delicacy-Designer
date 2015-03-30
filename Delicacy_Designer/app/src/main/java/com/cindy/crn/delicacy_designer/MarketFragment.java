@@ -3,6 +3,7 @@ package com.cindy.crn.delicacy_designer;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,10 @@ public class MarketFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+
+
+
+    private MyListView commodityList;//列表
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -49,6 +54,15 @@ public class MarketFragment extends Fragment {
 
     public MarketFragment() {
         // Required empty public constructor
+    }
+
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        commodityList = (MyListView)getView().findViewById(R.id.commodity_list);
+        MarketListAdapter adapter = new MarketListAdapter(this.getView().getContext());
+        commodityList.setAdapter(adapter);//为ListView绑定Adapter
     }
 
     @Override
