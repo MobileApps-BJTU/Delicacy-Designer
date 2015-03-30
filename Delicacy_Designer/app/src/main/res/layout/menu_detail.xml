@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/orange">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/back_button" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/sweet"
+                        android:textColor="#ffffff"
+                        android:singleLine="true"
+                        android:textSize="19dp" />
+
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/username"
+                        android:visibility="gone"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    ></LinearLayout>
+            </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/menu_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/banner" />
+
+            <com.example.yg.doubled.MyListView
+                android:id="@+id/menuitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.yg.doubled.MyListView>
+
+            <com.example.yg.doubled.MyListView
+                android:id="@+id/stepitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.example.yg.doubled.MyListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="right"
+                >
+               <ImageButton
+                   android:layout_marginRight="5dp"
+                   android:src="@drawable/love"
+                   android:background="@null"
+                   android:adjustViewBounds="true"
+                   android:scaleType="fitCenter"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+                <ImageButton
+                    android:background="@null"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/like"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            <Button
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="17.5dp"
+                android:textColor="#ffffff"
+                android:text="@string/sendworkd"
+                android:background="@color/orange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

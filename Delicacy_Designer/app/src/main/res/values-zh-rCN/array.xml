@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="food">
+    <item>菠萝</item>\
+    <item>芝士</item>
+    <item>草莓</item>
+</string-array>
+
+    <string-array name="weight">
+        <item>适量</item>
+        <item>适量</item>
+        <item>适量</item>
+    </string-array>
+
+    <string-array name="steps">
+        <item>将菠萝去皮，切成自己想要的形状，然后用盐水浸泡除去涩味，然后沥干水分待用</item>
+        <item>将芝士片按照菠萝的形状进行切片，然后放在沥干水分的菠萝块上</item>
+        <item>将草莓一切二，放在芝士片上，用牙签固定即可</item>
+        <item>小贴士：最上层的草莓可以用任意水果替换</item>
+    </string-array>
+
+    <string-array name="users">
+        <item>一个程序员</item>
+        <item>这不是测试</item>
+        <item>这里是昵称</item>
+        <item>我是谁</item>
+    </string-array>
+    <string-array name="share">
+        <item>移动开发需要注意什么？</item>
+        <item>今天吃了XXX，感觉很不错</item>
+        <item>吃吃吃</item>
+        <item>菠萝芝士小甜点,很美味</item>
+    </string-array>
+</resources>

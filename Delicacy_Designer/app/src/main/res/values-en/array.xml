@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="food">
+    <item>pineapple</item>\
+    <item>cheese</item>
+    <item>strawberry</item>
+</string-array>
+
+    <string-array name="weight">
+        <item>amount</item>
+        <item>amount</item>
+        <item>amount</item>
+    </string-array>
+
+    <string-array name="steps">
+        <item> will be the pineapple peeled, cut into the shape you want, and then soaked with salt water to remove astringency, then drain water stand-by </item>
+        <item> will cheese slices in accordance with pineapple shape, then put in pineapple drain water on </item>
+        <item> will be placed in all two strawberry, cheese slices, toothpicks can be fixed </item>
+        <item> tips: the top strawberry can replace  with any fruit</item>
+    </string-array>
+
+
+    <string-array name="users">
+        <item>A CODRE</item>
+        <item>It is not test</item>
+        <item>Nickname</item>
+        <item>Who am I</item>
+    </string-array>
+    <string-array name="share">
+        <item> mobile development to need to pay attention to what? </item>
+        <item> ate XXX, feeling very good today </item>
+        <item> eating </item>
+        <item> pineapple cheese cookies, very delicious </item>
+    </string-array>
+</resources>

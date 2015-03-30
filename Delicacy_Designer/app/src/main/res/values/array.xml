@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="food">
+    <item>pineapple</item>\
+    <item>cheese</item>
+    <item>strawberry</item>
+</string-array>
+
+    <string-array name="weight">
+        <item>amount</item>
+        <item>amount</item>
+        <item>amount</item>
+    </string-array>
+</resources>
