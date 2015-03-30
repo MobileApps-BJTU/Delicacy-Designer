@@ -24,6 +24,10 @@
         </activity>
         <activity android:name=".MenuDetailActivity" />
         <activity android:name=".ShareActivity" />
+        <activity
+            android:name=".createRecipe.CreateRecipeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
     </application>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />

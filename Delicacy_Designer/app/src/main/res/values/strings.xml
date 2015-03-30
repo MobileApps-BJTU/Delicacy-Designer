@@ -9,6 +9,25 @@
     <string name="my_group">My Group</string>
     <string name="following_designer">Following Designer</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="inputNameHint">Input the name of your recipe</string>
+    <string name="uploadCoverHint">Upload picture for recipe cover</string>
+    <string name="descriptionHint">Input recipe description</string>
+    <string name="material">Add Material</string>
+    <string name="stepHint">Input your step hint</string>
+    <string name="addStep">Add a step</string>
+    <string name="addToDraft">Add to Draft</string>
+    <string name="publish">Publish ! </string>
+    <string name="createAlert">The recipe name can not be null!</string>
+    <string name="alert">Alert</string>
+    <string name="confirm">Confirm</string>
+    <string name="materialDialog">Material</string>
+    <string name="materialWeight">Weight</string>
+    <string name="stepPrefix">Step</string>
+    <string name="instructionHint">Input the step instruction</string>
+    <string name="openFile">Open File Folder</string>
+    <string name="TakePhoto">Take Photo</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

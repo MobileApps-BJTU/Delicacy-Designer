@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.cindy.crn.delicacy_designer.createRecipe.CreateRecipeActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +58,14 @@ public class MainActivity extends FragmentActivity implements
         });
 
         //TODO:给侧边栏每一栏加点击事件跳转到对应界面
+        createRecipe= (TextView) findViewById(R.id.createRecipe);
+        createRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, CreateRecipeActivity.class);
+                startActivity(intent);
+            }
+        });
         myshare = (TextView)findViewById(R.id.myshare);
         myshare.setOnClickListener(new View.OnClickListener() {
             @Override
