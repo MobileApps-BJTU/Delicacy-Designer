@@ -8,8 +8,8 @@ import android.view.animation.RotateAnimation;
 
 public class MyAnimation {
 
-    public static void startAnimationIN(ViewGroup viewGroup, int duration){
-        for(int i = 0; i < viewGroup.getChildCount(); i++ ){
+    public static void startAnimationIN(ViewGroup viewGroup, int duration) {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
             viewGroup.getChildAt(i).setVisibility(View.VISIBLE);
             viewGroup.getChildAt(i).setFocusable(true);
             viewGroup.getChildAt(i).setClickable(true);
@@ -25,7 +25,7 @@ public class MyAnimation {
 
     }
 
-    public static void startAnimationOUT(final ViewGroup viewGroup, int duration , int startOffSet){
+    public static void startAnimationOUT(final ViewGroup viewGroup, int duration, int startOffSet) {
         Animation animation;
         animation = new RotateAnimation(0, -180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 1.0f);
         animation.setFillAfter(true);
@@ -47,7 +47,7 @@ public class MyAnimation {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                for(int i = 0; i < viewGroup.getChildCount(); i++ ){
+                for (int i = 0; i < viewGroup.getChildCount(); i++) {
                     viewGroup.getChildAt(i).setVisibility(View.GONE);
                     viewGroup.getChildAt(i).setFocusable(false);
                     viewGroup.getChildAt(i).setClickable(false);

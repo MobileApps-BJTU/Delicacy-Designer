@@ -59,7 +59,7 @@ public class CreateFirstFragment extends Fragment {
      *
      * @return A new instance of fragment CreateFirstFragment.
      */
-    // TODO: Rename and change types and number of parameters
+
     public static CreateFirstFragment newInstance() {
         CreateFirstFragment fragment = new CreateFirstFragment();
         return fragment;
@@ -80,17 +80,18 @@ public class CreateFirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_create_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_create_first, container, false);
         // Inflate the layout for this fragment
-        recipeName= (EditText) view.findViewById(R.id.recipeNameInput);
-        coverImage= (ImageView) view.findViewById(R.id.coverImage);
-        cancel= (TextView) view.findViewById(R.id.create_recipe_cancel);
-        next= (TextView) view.findViewById(R.id.create_recipe_next);
+        recipeName = (EditText) view.findViewById(R.id.recipeNameInput);
+        coverImage = (ImageView) view.findViewById(R.id.coverImage);
+        cancel = (TextView) view.findViewById(R.id.create_recipe_cancel);
+        next = (TextView) view.findViewById(R.id.create_recipe_next);
         cancel.setOnClickListener(cancelListener);
 
         return view;
     }
-    // TODO: Rename method, update argument and hook method into UI event
+
+
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -99,17 +100,17 @@ public class CreateFirstFragment extends Fragment {
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         Bitmap bm = null;
         // 外界的程序访问ContentProvider所提供数据 可以通过ContentResolver接口
         ContentResolver resolver = CreateFirstFragment.this.getActivity().getContentResolver();
         // 此处的用于判断接收的Activity是不是你想要的那个
-        if ((requestCode == 0)&&( data.getData()!=null)) {
+        if ((requestCode == 0) && (data.getData() != null)) {
             try {
                 Uri originalUri = data.getData(); // 获得图片的uri
                 bm = MediaStore.Images.Media.getBitmap(resolver, originalUri); // 显得到bitmap图片这里开始的第二部分，获取图片的路径：
-                String[] proj = { MediaStore.Images.Media.DATA };
+                String[] proj = {MediaStore.Images.Media.DATA};
                 // 好像是android多媒体数据库的封装接口，具体的看Android文档
                 Cursor cursor = CreateFirstFragment.this.getActivity().managedQuery(originalUri, proj, null, null,
                         null);
@@ -126,21 +127,22 @@ public class CreateFirstFragment extends Fragment {
                 // Log.e(TAG, e.toString());
             }
 
-        }else if(requestCode == 1){
+        } else if (requestCode == 1) {
             Bitmap bitmap = BitmapFactory.decodeFile(mPhotoPath, null);
             coverImage.setImageBitmap(bitmap);
         }
 
 
     }
+
     @Override
-    public void onActivityCreated(Bundle savedState){
+    public void onActivityCreated(Bundle savedState) {
         super.onActivityCreated(savedState);
 
         coverImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(CreateFirstFragment.this.getActivity());
+                AlertDialog.Builder builder = new AlertDialog.Builder(CreateFirstFragment.this.getActivity());
                 builder.setTitle(R.string.alert);
                 builder.setPositiveButton(R.string.openFile, new DialogInterface.OnClickListener() {
                     @Override
@@ -150,7 +152,7 @@ public class CreateFirstFragment extends Fragment {
                         CreateFirstFragment.this.startActivityForResult(getAlbum, 0);
                     }
                 });
-                builder.setNegativeButton(R.string.TakePhoto, new DialogInterface.OnClickListener(){
+                builder.setNegativeButton(R.string.TakePhoto, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -158,15 +160,15 @@ public class CreateFirstFragment extends Fragment {
                         mPhotoPath = "mnt/sdcard/DCIM/Camera/" + getPhotoFileName();
                         mPhotoFile = new File(mPhotoPath);
                         if (!mPhotoFile.exists()) {
-                                 try {
-                                            mPhotoFile.createNewFile();
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-                                        intent.putExtra(MediaStore.EXTRA_OUTPUT,
-                                                        Uri.fromFile(mPhotoFile));
-                                   startActivityForResult(intent, 1);
+                            try {
+                                mPhotoFile.createNewFile();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                Uri.fromFile(mPhotoFile));
+                        startActivityForResult(intent, 1);
                     }
                 });
                 builder.create().show();
@@ -176,8 +178,8 @@ public class CreateFirstFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(CreateFirstFragment.this.getActivity());
-                if ((recipeName.getText().length()==0)||(recipeName.getText().charAt(0)==' ')){
+                AlertDialog.Builder builder = new AlertDialog.Builder(CreateFirstFragment.this.getActivity());
+                if ((recipeName.getText().length() == 0) || (recipeName.getText().charAt(0) == ' ')) {
                     builder.setTitle(R.string.alert);
                     builder.setMessage(R.string.createAlert);
                     builder.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
@@ -187,8 +189,8 @@ public class CreateFirstFragment extends Fragment {
                         }
                     });
                     builder.create().show();
-                }else{
-                    if (mListener!=null)
+                } else {
+                    if (mListener != null)
                         mListener.sendNameToFragment2(recipeName.getText().toString());
                 }
             }
@@ -196,20 +198,20 @@ public class CreateFirstFragment extends Fragment {
         });
     }
 
-    private View.OnClickListener cancelListener=new View.OnClickListener() {
+    private View.OnClickListener cancelListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            if (mListener!=null)
+            if (mListener != null)
                 mListener.cancelCreate();
         }
     };
 
     private String getPhotoFileName() {
-               Date date = new Date(System.currentTimeMillis());
-               SimpleDateFormat dateFormat = new SimpleDateFormat(
-                  "'IMG'_yyyyMMdd_HHmmss");
-                return dateFormat.format(date) + ".jpg";
-           }
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "'IMG'_yyyyMMdd_HHmmss");
+        return dateFormat.format(date) + ".jpg";
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -243,6 +245,7 @@ public class CreateFirstFragment extends Fragment {
         public void onFragmentInteraction(Uri uri);
 
         public void sendNameToFragment2(String recipeName);
+
         public void cancelCreate();
     }
 

@@ -1,7 +1,6 @@
 <resources>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
     <string name="back">back</string>
     <string name="sweet">sweet</string>
     <string name="username">steveyg</string>
@@ -10,6 +9,61 @@
     <string name="comment">scommenthare</string>
     <string name="like">like</string>
     <string name="myshare">My share</string>
-<string name="scan">scan</string>
+    <string name="scan">scan</string>
+    <string name="good">cheese</string>
+    <string name="shoppingtrolley">shopping trolley</string>
+    <string name="selectall">select all</string>
+    <string name="pay">pay</string>
+    <string name="qrcode">QRcode</string>
+    <string name="app_name">Delicacy Designer</string>
+    <string name="userName">Cindy</string>
+    <string name="createRecipe">New a recipe</string>
+    <string name="recipeCollection">Recipe Collection</string>
+    <string name="my_order">My Order</string>
+    <string name="my_group">My Group</string>
+    <string name="following_designer">Following Designer</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="inputNameHint">Input the name of your recipe</string>
+    <string name="uploadCoverHint">Upload picture for recipe cover</string>
+    <string name="descriptionHint">Input recipe description</string>
+    <string name="material">Add Material</string>
+    <string name="stepHint">Input your step hint</string>
+    <string name="addStep">Add a step</string>
+    <string name="addToDraft">Add to Draft</string>
+    <string name="publish">Publish ! </string>
+    <string name="createAlert">The recipe name can not be null!</string>
+    <string name="alert">Alert</string>
+    <string name="confirm">Confirm</string>
+    <string name="materialDialog">Material</string>
+    <string name="materialWeight">Weight</string>
+    <string name="stepPrefix">Step</string>
+    <string name="instructionHint">Input the step instruction</string>
+    <string name="openFile">Open File Folder</string>
+    <string name="TakePhoto">Take Photo</string>
+    <string name="search_hint">Search recipe you want</string>
+    <string name="search">Search</string>
+    <string name="people_buy"> people buy</string>
+    <string name="product_detail">Product Detail</string>
+    <string name="product_title">Oriental Fire-Grilled Artisanal Beef Jerky - Original Flavor (1/4 pound)</string>
+    <string name="product_price">$100</string>
+    <string name="deliver_info">Usually ships within 2 to 3 days.</string>
+    <string name="fahuodi">Ships from and sold by Fragrant Foods, USA.</string>
+    <string name="product_sale">1000+ people buy</string>
+    <string name="customer_reviews">Customer Reviews</string>
+    <string name="recipe_title">Berry tart with lemon cookie crust</string>
+    <string name="user_manangement">User Manangement</string>
+    <string name="notifications_settings">Notifications Settings</string>
+    <string name="general_settings">General Settings</string>
+    <string name="feedback">Feedback</string>
+    <string name="about_delicacy_designer">About Delicacy Designer</string>
+    <string name="quit">Quit</string>
+    <string name="noNetworkHint">No network detected, Please check your setting!</string>
+    <string name="badneiworkhint">2G/3G network detected, Please check your setting!</string>
+
+
 </resources>
+
+
 

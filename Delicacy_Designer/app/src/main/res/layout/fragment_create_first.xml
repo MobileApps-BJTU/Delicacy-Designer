@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.cindy.crn.delicacy_designer.createRecipe.CreateFirstFragment">
 
@@ -7,8 +8,8 @@
         android:id="@+id/create_title_bar"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:gravity="center_vertical"
-        android:background="#ffff7a37">
+        android:background="#ffff7a37"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/create_recipe_cancel"
@@ -16,55 +17,56 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
+            android:clickable="true"
             android:gravity="center"
             android:text="@string/cancel"
-            android:clickable="true"
             android:textColor="#DDFFFFFF"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
+
         <TextView
             android:id="@+id/create_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/createRecipe"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:clickable="true"
+            android:text="@string/createRecipe"
             android:textColor="#DDFFFFFF"
-            android:textSize="22sp"
-            />
+            android:textSize="22sp" />
+
         <TextView
             android:id="@+id/create_recipe_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/create_title"
             android:layout_marginLeft="85dp"
+            android:layout_toRightOf="@id/create_title"
+            android:gravity="center"
             android:text="@string/next"
             android:textColor="#DDFFFFFF"
-            android:textSize="15sp"
-            android:gravity="center"
-            />
+            android:textSize="15sp" />
     </RelativeLayout>
+
     <TextView
         android:id="@+id/inputNameHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/inputNameHint"
         android:layout_below="@+id/create_title_bar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:textColor="#d0d0d0"/>
+        android:text="@string/inputNameHint"
+        android:textColor="#d0d0d0" />
+
     <EditText
-        style="@style/my_edittext_style"
         android:id="@+id/recipeNameInput"
+        style="@style/my_edittext_style"
         android:layout_width="250dp"
         android:layout_height="36dp"
-        android:padding="5dp"
         android:layout_below="@+id/inputNameHint"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        ></EditText>
+        android:padding="5dp"></EditText>
+
     <ImageView
         android:id="@+id/coverImage"
         android:layout_width="300dp"
@@ -72,7 +74,6 @@
         android:layout_below="@id/recipeNameInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:src="@drawable/eg"
-        />
+        android:src="@drawable/eg" />
 
 </RelativeLayout>

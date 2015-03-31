@@ -1,8 +1,13 @@
-<resources>
+﻿<resources>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
-    <string name="back">back</string>
+    <string name="good">芝士</string>
+    <string name="shoppingtrolley">购物车</string>
+    <string name="selectall">全选</string>
+    <string name="pay">去结算</string>
+    <string name="qrcode">二维码</string>
+    <string name="app_name">食星球</string>
+    <string name="back">返回</string>
     <string name="sweet">菠萝芝士小甜点</string>
     <string name="username">steveyg</string>
     <string name="materials">用料</string>
@@ -12,5 +17,57 @@
     <string name="like">赞</string>
     <string name="myshare">我的分享</string>
     <string name="scan">扫一扫</string>
+    <string name="userName">Cindy</string>
+    <string name="createRecipe">新建食谱</string>
+    <string name="recipeCollection">收藏的食谱</string>
+    <string name="my_order">我的订单</string>
+    <string name="my_group">我的小组</string>
+    <string name="following_designer">关注的美食家</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="cancel">取消</string>
+    <string name="next">下一步</string>
+    <string name="inputNameHint">输入食谱名称</string>
+    <string name="uploadCoverHint">为食谱上传封面</string>
+    <string name="descriptionHint">输入食谱描述</string>
+    <string name="material">添加原料</string>
+    <string name="stepHint">输入步骤说明</string>
+    <string name="addStep">添加一个步骤</string>
+    <string name="addToDraft">加入草稿箱</string>
+    <string name="publish">发布</string>
+    <string name="createAlert">食谱名称不可为空哦~!</string>
+    <string name="alert">提醒</string>
+    <string name="confirm">确认</string>
+    <string name="materialDialog">用料</string>
+    <string name="materialWeight">重量</string>
+    <string name="stepPrefix">Step</string>
+    <string name="instructionHint">输入该步骤描述</string>
+    <string name="openFile">从文件夹中上传</string>
+    <string name="TakePhoto">拍照</string>
+    <string name="cuisine_nearby">周边推荐</string>
+    <string name="search_hint">搜你所想</string>
+    <string name="search">搜索</string>
+    <string name="people_buy"> 人购买过</string>
+    <string name="product_detail">商品详情</string>
+    <string name="product_title">东方之火烤手工牛肉干-原味（1 / 4磅）</string>
+    <string name="product_price">¥100</string>
+    <string name="deliver_info">2到3天到货</string>
+    <string name="fahuodi">发货地广东</string>
+    <string name="product_sale">月销量   1000笔</string>
+    <string name="customer_reviews">商品评价</string>
+    <string name="recipe_title">柠檬奥尔良烤肉</string>
+    <string name="user_manangement">用户管理</string>
+    <string name="notifications_settings">通知设置</string>
+    <string name="general_settings">通用设置</string>
+
+    <string name="feedback">用户反馈</string>
+    <string name="about_delicacy_designer">关于食界</string>
+    <string name="quit">退出</string>
+    <string name="noNetworkHint">当前无网络连接，请检查您的设置</string>
+    <string name="badneiworkhint">检测到您在2G/3G环境下登录，可能会消耗大量流量</string>
+
 </resources>
+
+
+
+
 

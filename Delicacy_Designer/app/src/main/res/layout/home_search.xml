@@ -2,27 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="20dp"
-    android:layout_marginBottom="20dp"
     android:background="@drawable/search"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="3" />
+
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="17"
         android:background="@null" />
+
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="5.5"
         android:background="@drawable/searchbutton" />
+
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"

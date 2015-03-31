@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:Android="http://schemas.android.com/apk/res/android"
+    Android:layout_width="fill_parent"
+    Android:layout_height="fill_parent"
+    Android:background="#ffffff"
+    Android:orientation="horizontal">
+
+    <!-- 购买和商品详情 -->
+
+    <LinearLayout
+        Android:layout_width="fill_parent"
+        Android:layout_height="wrap_content"
+        Android:orientation="horizontal">
+
+        <CheckBox
+            Android:id="@+id/checkItem"
+            Android:layout_width="wrap_content"
+            Android:layout_height="match_parent"
+            Android:layout_margin="5px" />
+
+        <ImageView
+            Android:layout_width="64dp"
+            Android:layout_height="64dp"
+            Android:padding="5dp"
+            Android:src="@drawable/cheese" />
+
+        <LinearLayout
+            Android:layout_width="match_parent"
+            Android:layout_height="match_parent"
+            Android:gravity="center_vertical">
+
+            <LinearLayout
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_weight="2"
+                Android:orientation="vertical">
+
+                <TextView
+                    Android:id="@+id/titleItem"
+                    Android:layout_width="wrap_content"
+                    Android:layout_height="wrap_content"
+                    Android:text="张三三" />
+
+                <TextView
+                    Android:id="@+id/infoItem"
+                    Android:layout_width="wrap_content"
+                    Android:layout_height="wrap_content"
+                    Android:text="2015-02-26" />
+            </LinearLayout>
+
+            <LinearLayout
+                Android:layout_width="0dp"
+                Android:layout_height="wrap_content"
+                Android:layout_marginRight="10dp"
+                Android:layout_weight="1"
+                Android:orientation="vertical">
+
+                <TextView
+                    Android:id="@+id/money"
+                    Android:layout_width="fill_parent"
+                    Android:layout_height="wrap_content"
+                    Android:gravity="right"
+                    Android:text="￥10.00" />
+
+                <TextView
+                    Android:id="@+id/number"
+                    Android:layout_width="match_parent"
+                    Android:layout_height="wrap_content"
+                    Android:gravity="right"
+                    Android:text="x1" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            Android:id="@+id/detailItem"
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:layout_margin="5px"
+            Android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

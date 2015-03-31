@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,18 +28,18 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="45dp"
+            android:layout_gravity="center"
             android:layout_weight="2"
             android:gravity="center"
-            android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:singleLine="true"
                 android:text="@string/username"
                 android:textColor="#ffffff"
-                android:singleLine="true"
                 android:textSize="19dp" />
 
         </LinearLayout>
@@ -47,8 +48,8 @@
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="1"
-            android:gravity="right"
-            >
+            android:gravity="right">
+
             <ImageButton
                 android:id="@+id/add"
                 android:layout_width="wrap_content"
@@ -59,14 +60,13 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/add_button" />
 
-            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <ListView
         android:id="@+id/sharelist"
-        android:dividerHeight="10dp"
-        android:divider="#98b3b3b3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        </ListView>
+        android:layout_height="wrap_content"
+        android:divider="#98b3b3b3"
+        android:dividerHeight="10dp"></ListView>
 </LinearLayout>

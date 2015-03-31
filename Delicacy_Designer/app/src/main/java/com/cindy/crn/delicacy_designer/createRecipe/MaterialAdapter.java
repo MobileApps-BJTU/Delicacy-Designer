@@ -18,24 +18,27 @@ import java.util.Map;
 public class MaterialAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Map<String,Object>> listItems;
+    private List<Map<String, Object>> listItems;
     private LayoutInflater listContainer;
-    public final class MaterialItem{
+
+    public final class MaterialItem {
         public TextView material;
         public TextView weight;
     }
 
     /**
      * Constructor
+     *
      * @param context
      * @param listItems
      */
-    public MaterialAdapter(Context context, List<Map<String, Object>> listItems){
+    public MaterialAdapter(Context context, List<Map<String, Object>> listItems) {
 
-        this.context=context;
-        listContainer=LayoutInflater.from(context);
-        this.listItems=listItems;
+        this.context = context;
+        listContainer = LayoutInflater.from(context);
+        this.listItems = listItems;
     }
+
     @Override
     public int getCount() {
         return listItems.size();
@@ -54,25 +57,23 @@ public class MaterialAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        MaterialItem  listItemView = null;
-        if (convertView==null){
-            listItemView=new MaterialItem();
-            convertView=listContainer.inflate(R.layout.materialitem,null);
+        MaterialItem listItemView = null;
+        if (convertView == null) {
+            listItemView = new MaterialItem();
+            convertView = listContainer.inflate(R.layout.materialitem, null);
 
-            listItemView.material= (TextView) convertView.findViewById(R.id.goods);
-            listItemView.weight= (TextView) convertView.findViewById(R.id.goodsweight);
+            listItemView.material = (TextView) convertView.findViewById(R.id.goods);
+            listItemView.weight = (TextView) convertView.findViewById(R.id.goodsweight);
             convertView.setTag(listItemView);
-        }else{
-            listItemView = (MaterialItem)convertView.getTag();
+        } else {
+            listItemView = (MaterialItem) convertView.getTag();
         }
 
-        listItemView.material.setText((String)listItems.get(position).get("material"));
-        listItemView.weight.setText((String)listItems.get(position).get("weight"));
+        listItemView.material.setText((String) listItems.get(position).get("material"));
+        listItemView.weight.setText((String) listItems.get(position).get("weight"));
 
         return convertView;
     }
-
-
 
 
 }

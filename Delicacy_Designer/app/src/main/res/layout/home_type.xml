@@ -7,7 +7,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -15,14 +15,14 @@
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"
         android:layout_weight="30"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/bbq" />
 
         <TextView
@@ -34,8 +34,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/biandang" />
     </LinearLayout>
 
@@ -45,14 +45,14 @@
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"
         android:layout_weight="30"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/breakfast" />
 
         <TextView
@@ -64,8 +64,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/water" />
     </LinearLayout>
 
@@ -75,14 +75,14 @@
         android:layout_marginBottom="3dp"
         android:layout_marginTop="3dp"
         android:layout_weight="30"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/mianbao" />
 
         <TextView
@@ -94,8 +94,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:scaleType="fitStart"
             android:adjustViewBounds="true"
+            android:scaleType="fitStart"
             android:src="@drawable/shala" />
     </LinearLayout>
 

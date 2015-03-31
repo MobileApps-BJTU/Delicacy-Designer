@@ -1,9 +1,11 @@
 package com.cindy.crn.delicacy_designer;
 
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.media.Image;
-import android.support.v4.app.Fragment;
+import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -14,68 +16,90 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cindy.crn.delicacy_designer.createRecipe.CreateRecipeActivity;
+import com.cindy.crn.delicacy_designer.sortlistview.ContactActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements
-        ViewPager.OnPageChangeListener, View.OnClickListener {
+        ViewPager.OnPageChangeListener, View.OnClickListener, ForumFragment.OnFragmentInteractionListener {
 
 
-    private ViewPager mViewPager;
+    //private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
     private SlideMenu slideMenu;
-    private TextView userName, createRecipe,recipeCollection,myGroup,myOrder,followin,myshare;
+    private TextView userName, createRecipe, recipeCollection, myGroup, myOrder, follower, myshare;
     private ImageView slideSwicher;
-    private List<ImageView> mTabIndicator=new ArrayList<ImageView>();
-    private List<Fragment> mTabs=new ArrayList<Fragment>();
+    private List<ImageView> mTabIndicator = new ArrayList<ImageView>();
+    private List<Fragment> mTabs = new ArrayList<Fragment>();
     private ImageView qrbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        //   initDatas();
+        HomeFragment homeFragment = new HomeFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.viewpager, homeFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
 
-        //set viewPager
-        mViewPager= (ViewPager) findViewById(R.id.viewpager);
-        initDatas();
-        mViewPager.setAdapter(mAdapter);
-        mViewPager.setOnPageChangeListener(this);
-        //set SlideMenu
-        slideMenu= (SlideMenu) findViewById(R.id.slideMenu);
-        slideSwicher= (ImageView) findViewById(R.id.title_bar_menu_btn);
+        initTabIndicator();
+
+        slideMenu = (SlideMenu) findViewById(R.id.slideMenu);
+        slideSwicher = (ImageView) findViewById(R.id.title_bar_menu_btn);
         slideSwicher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (slideMenu.isMainScreenShowing()){
-                    slideMenu.openMenu();;
-                }else{
+                if (slideMenu.isMainScreenShowing()) {
+                    slideMenu.openMenu();
+                    ;
+                } else {
                     slideMenu.closeMenu();
                 }
             }
         });
 
         //TODO:给侧边栏每一栏加点击事件跳转到对应界面
-        createRecipe= (TextView) findViewById(R.id.createRecipe);
+        createRecipe = (TextView) findViewById(R.id.createRecipe);
         createRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, CreateRecipeActivity.class);
+                Intent intent = new Intent(MainActivity.this, CreateRecipeActivity.class);
                 startActivity(intent);
             }
         });
-        myshare = (TextView)findViewById(R.id.myshare);
+        myshare = (TextView) findViewById(R.id.myshare);
         myshare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,ShareActivity.class);
+                Intent i = new Intent(MainActivity.this, ShareActivity.class);
                 startActivity(i);
             }
         });
 
-        qrbutton = (ImageView)findViewById(R.id.qr_button);
+        myOrder = (TextView) findViewById(R.id.myOrder);
+        myOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, ShopCarActivity.class);
+                startActivity(it);
+            }
+        });
+        follower = (TextView) findViewById(R.id.following);
+        follower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(it);
+            }
+        });
+        qrbutton = (ImageView) findViewById(R.id.qr_button);
         qrbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +136,6 @@ public class MainActivity extends FragmentActivity implements
     }
 
 
-
     private void initTabIndicator() {
         ImageView one = (ImageView) findViewById(R.id.menu_home);
         ImageView two = (ImageView) findViewById(R.id.menu_forum);
@@ -131,33 +154,6 @@ public class MainActivity extends FragmentActivity implements
 
     }
 
-    private void initDatas() {
-        HomeFragment homeFragment = new HomeFragment();
-        mTabs.add(homeFragment);
-        ForumFragment forumFragment = new ForumFragment();
-        mTabs.add(forumFragment);
-        MarketFragment marketFragment = new MarketFragment();
-        mTabs.add(marketFragment);
-        SettingFragment settingFragment = new SettingFragment();
-        mTabs.add(settingFragment);
-
-        mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
-
-            @Override
-            public int getCount() {
-                return mTabs.size();
-            }
-
-            @Override
-            public android.support.v4.app.Fragment getItem(int arg0) {
-                return mTabs.get(arg0);
-            }
-        };
-
-        initTabIndicator();
-
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -166,20 +162,37 @@ public class MainActivity extends FragmentActivity implements
 //TODO:为每一次选中的图标加深颜色
         switch (v.getId()) {
             case R.id.menu_home:
-                mViewPager.setCurrentItem(0, false);
-                mTabs.get(0).onResume();
+
+                // Toast.makeText(MainActivity.this, "aa", Toast.LENGTH_SHORT).show();
+                HomeFragment homeFragment = new HomeFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.viewpager, homeFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 break;
             case R.id.menu_forum:
-                mViewPager.setCurrentItem(1, false);
-                mTabs.get(1).onResume();
+                //  Toast.makeText(MainActivity.this, "bb", Toast.LENGTH_SHORT).show();
+                ForumFragment forumFragment = new ForumFragment();
+                transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.viewpager, forumFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 break;
             case R.id.menu_market:
-                mViewPager.setCurrentItem(2, false);
-                mTabs.get(2).onResume();
+
+                MarketFragment marketFragment = new MarketFragment();
+                transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.viewpager, marketFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 break;
             case R.id.menu_setting:
-                mViewPager.setCurrentItem(3, false);
-                mTabs.get(3).onResume();
+
+                SettingFragment settingFragment = new SettingFragment();
+                transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.viewpager, settingFragment);
+                transaction.addToBackStack(null);
+                transaction.commit();
                 break;
 
         }
@@ -190,7 +203,7 @@ public class MainActivity extends FragmentActivity implements
     /**
      * set other Tab
      */
-   // TODO:更改未选中图标颜色
+    // TODO:更改未选中图标颜色
     private void resetOtherTabs() {
         for (int i = 0; i < mTabIndicator.size(); i++) {
 
@@ -210,5 +223,16 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public void onPageScrollStateChanged(int i) {
 
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void showDetail() {
+        Intent intent = new Intent(MainActivity.this, MenuDetailActivity.class);
+        startActivity(intent);
     }
 }

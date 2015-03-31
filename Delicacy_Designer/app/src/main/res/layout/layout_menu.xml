@@ -3,7 +3,7 @@
     android:layout_width="240dip"
     android:layout_height="fill_parent"
     android:background="#ffffff"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/userName"
@@ -89,10 +89,12 @@
         android:text="@string/myshare"
         android:textColor="#ff959595"
         android:textSize="16.0sp" />
+
     <View
         android:layout_width="240dip"
         android:layout_height="2.0dip"
         android:background="@drawable/ic_shelf_category_divider" />
+
     <TextView
         android:id="@+id/following"
         android:layout_width="240dip"
@@ -103,6 +105,7 @@
         android:text="@string/following_designer"
         android:textColor="#ff959595"
         android:textSize="16.0sp" />
+
     <View
         android:layout_width="240dip"
         android:layout_height="2.0dip"

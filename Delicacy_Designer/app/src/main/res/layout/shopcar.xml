@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/orange">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:id="@+id/sc_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="@string/shoppingtrolley"
+                android:textColor="#ffffff"
+                android:textSize="19dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"></LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/buttom_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/selectall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/orange"
+                android:text="@string/selectall"
+                android:textColor="#ffffff"
+                android:textSize="17.5dp" />
+
+            <TextView
+                android:id="@+id/summoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="￥0"
+                android:textSize="17.5dp" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/orange"
+                android:text="@string/pay"
+                android:textColor="#ffffff"
+                android:textSize="17.5dp" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_goods"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/buttom_item" />
+    </RelativeLayout>
+</LinearLayout>

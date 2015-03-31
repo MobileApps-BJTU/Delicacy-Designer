@@ -11,18 +11,18 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=" User Manangement" />
+            android:text="@string/user_manangement" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="20dp" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=" Notifications Settings" />
+            android:text="@string/notifications_settings" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=" General Settings" />
+            android:text="@string/general_settings" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -30,11 +30,11 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=" Feedback" />
+            android:text="@string/feedback" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text=" About Delicacy Designer" />
+            android:text="@string/about_delicacy_designer" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="20dp" />
@@ -42,7 +42,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Quit" />
+            android:text="@string/quit" />
     </LinearLayout>
 
 

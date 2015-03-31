@@ -11,17 +11,18 @@ import android.view.MenuItem;
 
 import com.cindy.crn.delicacy_designer.R;
 import com.cindy.crn.delicacy_designer.MainActivity;
+import com.cindy.crn.delicacy_designer.ShareActivity;
 
-public class CreateRecipeActivity extends Activity implements CreateFirstFragment.OnFragmentInteractionListener,CreateSecondFragment.OnFragmentInteractionListener{
+public class CreateRecipeActivity extends Activity implements CreateFirstFragment.OnFragmentInteractionListener, CreateSecondFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_recipe);
 
-        CreateFirstFragment firstFragment=CreateFirstFragment.newInstance();
-        FragmentTransaction transaction=getFragmentManager().beginTransaction();
-        transaction.replace(R.id.createFragmentHolder,firstFragment);
+        CreateFirstFragment firstFragment = CreateFirstFragment.newInstance();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.createFragmentHolder, firstFragment);
         transaction.commit();
     }
 
@@ -54,18 +55,30 @@ public class CreateRecipeActivity extends Activity implements CreateFirstFragmen
     }
 
     @Override
+    public void turnToShowList() {
+        Intent intent = new Intent(CreateRecipeActivity.this, ShareActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void cancelRecipe() {
+        Intent intent = new Intent(CreateRecipeActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
     public void sendNameToFragment2(String recipeName) {
 
-        CreateSecondFragment secondFragment=CreateSecondFragment.newInstance(recipeName);
-        FragmentTransaction transaction=getFragmentManager().beginTransaction();
-        transaction.replace(R.id.createFragmentHolder,secondFragment);
+        CreateSecondFragment secondFragment = CreateSecondFragment.newInstance(recipeName);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.createFragmentHolder, secondFragment);
         transaction.commit();
 
     }
 
     @Override
     public void cancelCreate() {
-        Intent intent=new Intent(CreateRecipeActivity.this, MainActivity.class);
+        Intent intent = new Intent(CreateRecipeActivity.this, MainActivity.class);
         startActivity(intent);
     }
 }

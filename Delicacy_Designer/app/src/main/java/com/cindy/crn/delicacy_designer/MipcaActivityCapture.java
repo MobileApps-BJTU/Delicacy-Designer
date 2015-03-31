@@ -33,6 +33,7 @@ import view.ViewfinderView;
 
 /**
  * Initial the camera
+ *
  * @author Ryan.Tang
  */
 public class MipcaActivityCapture extends Activity implements Callback {
@@ -48,7 +49,9 @@ public class MipcaActivityCapture extends Activity implements Callback {
     private static final float BEEP_VOLUME = 0.10f;
     private boolean vibrate;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,6 +116,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
 
     /**
      * 处理扫描结果
+     *
      * @param result
      * @param barcode
      */
@@ -122,15 +126,18 @@ public class MipcaActivityCapture extends Activity implements Callback {
         String resultString = result.getText();
         if (resultString.equals("")) {
             Toast.makeText(MipcaActivityCapture.this, "Scan failed!", Toast.LENGTH_SHORT).show();
-        }else {
+        } else {
             Intent resultIntent = new Intent();
             Bundle bundle = new Bundle();
             bundle.putString("result", resultString);
             //bundle.putString("result", s);
+            Intent i = new Intent(MipcaActivityCapture.this, MenuDetailActivity.class);
+            startActivity(i);
             bundle.putParcelable("bitmap", barcode);
             resultIntent.putExtras(bundle);
+
             //this.setResult(RESULT_OK, resultIntent);
-            Toast.makeText(MipcaActivityCapture.this,resultString, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MipcaActivityCapture.this, resultString, Toast.LENGTH_SHORT).show();
         }
         //	MipcaActivityCapture.this.finish();
     }
@@ -144,7 +151,7 @@ public class MipcaActivityCapture extends Activity implements Callback {
             return;
         }
         if (handler == null) {
-            handler = new CaptureActivityHandler(this,decodeFormats,characterSet);
+            handler = new CaptureActivityHandler(this, decodeFormats, characterSet);
         }
     }
 

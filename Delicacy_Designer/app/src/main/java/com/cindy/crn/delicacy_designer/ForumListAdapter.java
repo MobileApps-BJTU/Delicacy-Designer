@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class ForumListAdapter extends BaseAdapter{
+public class ForumListAdapter extends BaseAdapter {
     private LayoutInflater mInflater;// 得到一个LayoutInfalter对象用来导入布局
 
     /* 构造函数 */
@@ -24,7 +24,7 @@ public class ForumListAdapter extends BaseAdapter{
 
     private ArrayList<HashMap<String, Object>> getDate() {
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
-		/* 为动态数组添加数据 */
+        /* 为动态数组添加数据 */
         for (int i = 0; i < 30; i++) {
             HashMap<String, Object> map = new HashMap<String, Object>();
             map.put("book", "第" + i + "道菜谱");
@@ -59,7 +59,7 @@ public class ForumListAdapter extends BaseAdapter{
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.forum_item, null);
             holder = new ViewHolder();
-			/* 得到各个控件的对象 */
+            /* 得到各个控件的对象 */
             holder.imgCookbook = (ImageView) convertView
                     .findViewById(R.id.img_book);
             holder.textBookName = (TextView) convertView.findViewById(R.id.text_book_name);

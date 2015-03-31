@@ -32,4 +32,11 @@
         <item> eating </item>
         <item> pineapple cheese cookies, very delicious </item>
     </string-array>
+
+    <string-array name="date">
+        <item>Brian</item>
+        <item>杨光</item>
+        <item>陈若男</item>
+        <item>朱盟邦</item>
+    </string-array>
 </resources>

@@ -5,7 +5,6 @@
     android:background="@color/orange">
 
 
-
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="45dp"
@@ -25,18 +24,18 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:layout_gravity="center"
         android:layout_weight="2"
         android:gravity="center"
-        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:singleLine="true"
             android:text="@string/scan"
             android:textColor="#ffffff"
-            android:singleLine="true"
             android:textSize="19dp" />
 
     </LinearLayout>
@@ -44,9 +43,9 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:layout_gravity="center"
         android:orientation="vertical">
 
 

@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -14,7 +16,8 @@ import java.util.HashMap;
 
 public class MenuDetailActivity extends Activity {
 
-    private MyListView list,steplist;
+    private MyListView list, steplist;
+    private Button share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,14 @@ public class MenuDetailActivity extends Activity {
         setContentView(R.layout.menu_detail);
 
         list = (MyListView) findViewById(R.id.menuitem);
+        share = (Button) findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuDetailActivity.this, qrActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         String food[] = this.getResources().getStringArray(R.array.food);
@@ -47,30 +58,30 @@ public class MenuDetailActivity extends Activity {
 
         list.setAdapter(listItemAdapter);
 
-       steplist = (MyListView) findViewById(R.id.stepitem);
+        steplist = (MyListView) findViewById(R.id.stepitem);
 
         ArrayList<HashMap<String, Object>> steplistItem = new ArrayList<HashMap<String, Object>>();
 
         String step[] = this.getResources().getStringArray(R.array.steps);
 
-         map = new HashMap<String, Object>();
-        map.put("no", this.getResources().getString(R.string.sweet)+this.getResources().getString(R.string.steps));
+        map = new HashMap<String, Object>();
+        map.put("no", this.getResources().getString(R.string.sweet) + this.getResources().getString(R.string.steps));
         steplistItem.add(map);
 
         for (int i = 0; i < step.length; i++) {
             map = new HashMap<String, Object>();
-            map.put("no", i+1);
+            map.put("no", i + 1);
             map.put("text", step[i]);
-            if(i == 2){
-                map.put("image",R.drawable.step);
+            if (i == 2) {
+                map.put("image", R.drawable.step);
             }
             steplistItem.add(map);
         }
 
         SimpleAdapter steplistItemAdapter = new SimpleAdapter(this, steplistItem,
                 R.layout.howtomakeitem,
-                new String[]{"no","text","image"},
-                new int[]{R.id.stepnum,R.id.step_text,R.id.step_image});
+                new String[]{"no", "text", "image"},
+                new int[]{R.id.stepnum, R.id.step_text, R.id.step_image});
 
         steplist.setAdapter(steplistItemAdapter);
     }
@@ -92,7 +103,7 @@ public class MenuDetailActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(MenuDetailActivity.this,ShareActivity.class);
+            Intent i = new Intent(MenuDetailActivity.this, ShareActivity.class);
             startActivity(i);
             return true;
         }

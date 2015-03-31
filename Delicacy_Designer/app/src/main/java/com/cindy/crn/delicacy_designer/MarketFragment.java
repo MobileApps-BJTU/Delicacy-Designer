@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,9 +31,8 @@ public class MarketFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
 
-
-
     private MyListView commodityList;//列表
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -60,7 +59,7 @@ public class MarketFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        commodityList = (MyListView)getView().findViewById(R.id.commodity_list);
+        commodityList = (MyListView) getView().findViewById(R.id.commodity_list);
         MarketListAdapter adapter = new MarketListAdapter(this.getView().getContext());
         commodityList.setAdapter(adapter);//为ListView绑定Adapter
     }
