@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <include layout="@layout/home_search" />
+                <include layout="@layout/home_search"/>
 
                 <ImageView
                     android:id="@+id/tittle"

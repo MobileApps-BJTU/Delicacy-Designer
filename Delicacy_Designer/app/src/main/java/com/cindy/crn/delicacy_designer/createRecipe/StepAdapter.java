@@ -1,6 +1,10 @@
 package com.cindy.crn.delicacy_designer.createRecipe;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +26,8 @@ public class StepAdapter extends BaseAdapter {
     private Context context;
     private List<Map<String,Object>> listItems;
     private LayoutInflater listContainer;
+    private Handler mHandler;
+
 
     public final class StepItem{
         public TextView stepId;
@@ -29,16 +35,34 @@ public class StepAdapter extends BaseAdapter {
         public EditText stepInstruction;
     }
 
+    private class OnItemChildClickListener implements View.OnClickListener{
+
+
+        private int position;
+
+        public OnItemChildClickListener(int position){
+            this.position=position;
+        }
+        @Override
+        public void onClick(View v) {
+            Message msg=new Message();
+            msg.what=2;
+            msg.arg1=position;
+            mHandler.sendMessage(msg);
+        }
+    }
+
     /**
      * Constructor
      * @param context
      * @param listItems
      */
-    public StepAdapter(Context context, List<Map<String, Object>> listItems){
-
+    public StepAdapter(Context context, List<Map<String, Object>> listItems,Handler mHandler){
+        this.mHandler=mHandler;
         this.context=context;
         listContainer=LayoutInflater.from(context);
         this.listItems=listItems;
+
     }
     @Override
     public int getCount() {
@@ -70,8 +94,9 @@ public class StepAdapter extends BaseAdapter {
             listItemView = (StepItem)convertView.getTag();
         }
 
+        listItemView.stepImage.setOnClickListener(new OnItemChildClickListener(position));
         listItemView.stepId.setText(listItems.get(position).get("stepId").toString());
-        listItemView.stepImage.setBackgroundResource((Integer)listItems.get(position).get("stepImage"));
+        listItemView.stepImage.setImageDrawable((android.graphics.drawable.Drawable) listItems.get(position).get("stepImage"));
         listItemView.stepInstruction.setText((listItems.get(position).get("instruction").toString()));
         return convertView;
     }

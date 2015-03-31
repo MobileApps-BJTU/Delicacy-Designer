@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 
@@ -81,6 +82,14 @@ public class ForumFragment extends Fragment {
         listRecordList = (MyListView)getView().findViewById(R.id.recipe_list);
         ForumListAdapter adapter = new ForumListAdapter(this.getView().getContext());
         listRecordList.setAdapter(adapter);//为ListView绑定Adapter
+        listRecordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (mListener!=null){
+                    mListener.showDetail();
+                }
+            }
+        });
     }
 
     @Override
@@ -100,12 +109,12 @@ public class ForumFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-//        try {
-//            mListener = (OnFragmentInteractionListener) activity;
-//        } catch (ClassCastException e) {
-//            throw new ClassCastException(activity.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
     @Override
@@ -127,6 +136,7 @@ public class ForumFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
+        public void showDetail();
     }
 
 }

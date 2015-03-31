@@ -41,4 +41,10 @@
     <string name="search_hint">Search recipe you want</string>
     <string name="search">Search</string>
     <string name="people_buy"> people buy</string>
+    <string name="good">cheese</string>
+    <string name="shoppingtrolley">shopping trolley</string>
+    <string name="selectall">select all</string>
+    <string name="pay">pay</string>
+    <string name="qrcode">QRcode</string>
+
 </resources>

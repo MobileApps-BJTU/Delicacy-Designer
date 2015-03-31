@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
@@ -15,6 +17,7 @@ import java.util.HashMap;
 public class MenuDetailActivity extends Activity {
 
     private MyListView list,steplist;
+    private Button share;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,14 @@ public class MenuDetailActivity extends Activity {
         setContentView(R.layout.menu_detail);
 
         list = (MyListView) findViewById(R.id.menuitem);
+        share= (Button) findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MenuDetailActivity.this,qrActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         String food[] = this.getResources().getStringArray(R.array.food);

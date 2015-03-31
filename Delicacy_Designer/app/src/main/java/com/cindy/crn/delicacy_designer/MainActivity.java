@@ -3,6 +3,7 @@ package com.cindy.crn.delicacy_designer;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,18 +17,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cindy.crn.delicacy_designer.createRecipe.CreateRecipeActivity;
+import com.cindy.crn.delicacy_designer.sortlistview.ContactActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements
-        ViewPager.OnPageChangeListener, View.OnClickListener {
+        ViewPager.OnPageChangeListener, View.OnClickListener,ForumFragment.OnFragmentInteractionListener{
 
 
     private ViewPager mViewPager;
     private FragmentPagerAdapter mAdapter;
     private SlideMenu slideMenu;
-    private TextView userName, createRecipe,recipeCollection,myGroup,myOrder,followin,myshare;
+    private TextView userName, createRecipe,recipeCollection,myGroup,myOrder,follower,myshare;
     private ImageView slideSwicher;
     private List<ImageView> mTabIndicator=new ArrayList<ImageView>();
     private List<Fragment> mTabs=new ArrayList<Fragment>();
@@ -72,6 +74,14 @@ public class MainActivity extends FragmentActivity implements
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,ShareActivity.class);
                 startActivity(i);
+            }
+        });
+        follower= (TextView) findViewById(R.id.following);
+        follower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it=new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(it);
             }
         });
 
@@ -210,5 +220,16 @@ public class MainActivity extends FragmentActivity implements
     @Override
     public void onPageScrollStateChanged(int i) {
 
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void showDetail() {
+        Intent intent=new Intent(MainActivity.this,MenuDetailActivity.class);
+        startActivity(intent);
     }
 }

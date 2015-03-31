@@ -11,7 +11,7 @@
         android:background="#ffff7a37">
 
         <TextView
-            android:id="@+id/create_recipe_cancel"
+            android:id="@+id/create_recipe_cancel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -87,6 +87,10 @@
         android:layout_marginLeft="20dp"
         android:src="@drawable/plus"
         />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2.0dip"
+                android:background="@drawable/ic_shelf_category_divider" />
       <com.cindy.crn.delicacy_designer.MyListView
           android:id="@+id/materialList"
           android:layout_width="wrap_content"
@@ -96,6 +100,10 @@
           android:layout_centerHorizontal="true"
           android:layout_alignLeft="@id/materialText"
           android:layout_alignRight="@id/descriptionInput"/>
+            <View
+                android:layout_width="240dip"
+                android:layout_height="2.0dip"
+                android:background="@drawable/ic_shelf_category_divider" />
       <com.cindy.crn.delicacy_designer.MyListView
           android:id="@+id/stepList"
           android:layout_width="wrap_content"

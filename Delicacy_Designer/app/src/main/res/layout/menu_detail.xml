@@ -55,11 +55,14 @@
                         android:textColor="#ffffff" />
                 </LinearLayout>
 
-                <LinearLayout
+                <Button
                     android:layout_width="0dp"
                     android:layout_height="45dp"
                     android:layout_weight="1"
-                    ></LinearLayout>
+                    android:id="@+id/share"
+                    android:background="@null"
+                    android:textColor="#ffffff"
+                    android:text="share"></Button>
             </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -77,19 +80,19 @@
                 android:scaleType="fitStart"
                 android:src="@drawable/banner" />
 
-            <com.example.yg.doubled.MyListView
+            <com.cindy.crn.delicacy_designer.MyListView
                 android:id="@+id/menuitem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </com.example.yg.doubled.MyListView>
+            </com.cindy.crn.delicacy_designer.MyListView>
 
-            <com.example.yg.doubled.MyListView
+            <com.cindy.crn.delicacy_designer.MyListView
                 android:id="@+id/stepitem"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </com.example.yg.doubled.MyListView>
+            </com.cindy.crn.delicacy_designer.MyListView>
 
             <LinearLayout
                 android:layout_width="match_parent"

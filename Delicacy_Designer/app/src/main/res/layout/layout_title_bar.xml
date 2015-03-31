@@ -28,10 +28,11 @@
         android:textSize="22sp" />
     <ImageView
         android:id="@+id/qr_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:background="@null"
         android:layout_height="32dp"
         android:layout_toRightOf="@+id/title_bar_name"
+        android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:src="@drawable/qr_logo"
 

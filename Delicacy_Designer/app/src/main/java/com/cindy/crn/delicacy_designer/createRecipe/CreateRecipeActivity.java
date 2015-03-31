@@ -11,6 +11,7 @@ import android.view.MenuItem;
 
 import com.cindy.crn.delicacy_designer.R;
 import com.cindy.crn.delicacy_designer.MainActivity;
+import com.cindy.crn.delicacy_designer.ShareActivity;
 
 public class CreateRecipeActivity extends Activity implements CreateFirstFragment.OnFragmentInteractionListener,CreateSecondFragment.OnFragmentInteractionListener{
 
@@ -51,6 +52,18 @@ public class CreateRecipeActivity extends Activity implements CreateFirstFragmen
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void turnToShowList() {
+        Intent intent=new Intent(CreateRecipeActivity.this, ShareActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void cancelRecipe() {
+        Intent intent=new Intent(CreateRecipeActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

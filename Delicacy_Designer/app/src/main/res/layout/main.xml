@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:orientation="vertical">
 
-    <include layout="@layout/layout_title_bar"/>
+    <include layout="@layout/layout_title_bar" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
@@ -35,37 +35,42 @@
             android:layout_width="fill_parent"
             android:layout_height="55dp"
             android:background="#ffff7a37"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
             <!-- TODO:将每个图标替换-->
             <ImageView
                 android:id="@+id/menu_home"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu_home"
-                android:layout_marginLeft="45dp"
+                android:src="@drawable/home_logo"
                 android:clickable="true"
                 android:padding="10dp"/>
             <ImageView
                 android:id="@+id/menu_forum"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu_home"
+                android:src="@drawable/people_logo"
                 android:layout_marginLeft="30dp"
                 android:clickable="true"
                 android:padding="10dp"/>
             <ImageView
                 android:id="@+id/menu_market"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu_home"
+                android:src="@drawable/shopping_logo"
                 android:layout_marginLeft="30dp"
                 android:clickable="true"
                 android:padding="10dp"/>
             <ImageView
                 android:id="@+id/menu_setting"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_menu_home"
+                android:src="@drawable/setting_logo"
                 android:layout_marginLeft="30dp"
                 android:clickable="true"
                 android:padding="10dp"/>
