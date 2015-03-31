@@ -3,8 +3,47 @@
     android:layout_height="match_parent"
     tools:context="com.cindy.crn.delicacy_designer.SettingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="Setting" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" User Manangement" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" Notifications Settings" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" General Settings" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" Feedback" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" About Delicacy Designer" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Quit" />
+    </LinearLayout>
+
 
 </FrameLayout>
